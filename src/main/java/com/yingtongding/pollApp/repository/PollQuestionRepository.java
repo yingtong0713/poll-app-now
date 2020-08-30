@@ -6,10 +6,11 @@ import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.UUID;
 
 @Repository
 @Transactional
-public interface PollQuestionRepository extends JpaRepository<PollQuestion,Long> {
+public interface PollQuestionRepository extends JpaRepository<PollQuestion, UUID> {
 
-    List<PollQuestion> findAllByPollId(Long pollId);
+    List<PollQuestion> findAllByPollId(UUID pollId);
 }
